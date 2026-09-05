@@ -194,7 +194,6 @@
     text-align: center;
     color: #ffffff;
     
-    /* Background button menggunakan button.png tanpa border/stroke */
     background-image: url('button.png');
     background-size: cover;
     background-position: center;
@@ -291,11 +290,6 @@
   </div>
 
   <script>
-    const username = localStorage.getItem("username");
-    if(!username){
-        window.location.href = "login.html";
-    }
-
     const welcome = document.getElementById('screen-welcome');
     const menu = document.getElementById('screen-menu');
     let isMenuOpen = false;
@@ -372,4 +366,5 @@
   </script>
 
 </body>
-</html>
+          </html>
+          
