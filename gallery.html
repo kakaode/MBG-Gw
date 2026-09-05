@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -115,22 +114,6 @@
     border: 1px solid var(--cyan);
   }
 
-  .navText p {
-    margin: 0;
-    font-size: 0.85rem;
-  }
-
-  #navUsername {
-    font-family: 'FiraCondBold', sans-serif;
-    color: var(--cyan);
-    font-size: 1rem;
-  }
-
-  #navEmail, #navTitle {
-    color: #aaa;
-    font-size: 0.75rem;
-  }
-
   .navbarMenu {
     display: flex;
     flex-direction: column;
@@ -177,7 +160,7 @@
   }
 
   /* =========================
-     SCROLL CONTAINER DENGAN EFEK GELAP DI ATAS & BAWAH
+     SCROLL CONTAINER DENGAN EFEK BAYANGAN GELAP DI ATAS & BAWAH
   ========================= */
   .scroll-fade-container {
     position: relative;
@@ -189,7 +172,6 @@
     scrollbar-color: var(--cyan) #111;
   }
 
-  /* Efek Bayangan Gelap Menyelimuti Atas & Bawah (Fixed Shadow Overlay) */
   .scroll-fade-container::before {
     content: '';
     position: fixed;
@@ -549,11 +531,6 @@
       <div class="closeNavbar" onclick="toggleNavbar()">✕</div>
       <div class="navbarHeader">
           <img src="icon.png" class="navLogo">
-          <div class="navText">
-              <p id="navUsername"></p>
-              <p id="navEmail"></p>
-              <p id="navTitle"></p>
-          </div>
       </div>
       <div class="navbarMenu">
           <a href="index.html" class="navMenuBox"><img src="icon.png"><span>Home</span></a>
@@ -677,16 +654,6 @@
   </div>
 
 <script>
-  // Cek Login
-  const username = localStorage.getItem("username");
-  if(!username){
-      window.location.href = "login.html";
-  }
-
-  document.getElementById("navUsername").innerText = username || "Unknown User";
-  document.getElementById("navEmail").innerText = localStorage.getItem("email") || "No Email";
-  document.getElementById("navTitle").innerText = localStorage.getItem("title") || "No Title";
-
   function toggleNavbar(){
       document.getElementById("navbar").classList.toggle("active");
       document.getElementById("overlay").classList.toggle("active");

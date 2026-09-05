@@ -116,22 +116,6 @@
     border: 1px solid var(--navy-bright);
   }
 
-  .navText p {
-    margin: 0;
-    font-size: 0.85rem;
-  }
-
-  #navUsername {
-    font-family: 'FiraCondBold', sans-serif;
-    color: var(--navy-bright);
-    font-size: 1rem;
-  }
-
-  #navEmail, #navTitle {
-    color: #aaa;
-    font-size: 0.75rem;
-  }
-
   .navbarMenu {
     display: flex;
     flex-direction: column;
@@ -473,11 +457,6 @@
       <div class="closeNavbar" onclick="toggleNavbar()">✕</div>
       <div class="navbarHeader">
           <img src="icon.png" class="navLogo">
-          <div class="navText">
-              <p id="navUsername"></p>
-              <p id="navEmail"></p>
-              <p id="navTitle"></p>
-          </div>
       </div>
       <div class="navbarMenu">
           <a href="index.html" class="navMenuBox"><img src="icon.png"><span>Home</span></a>
@@ -562,16 +541,6 @@
   <audio id="backsound" preload="auto"></audio>
 
 <script>
-  // Cek Login
-  const username = localStorage.getItem("username");
-  if(!username){
-      window.location.href = "login.html";
-  }
-
-  document.getElementById("navUsername").innerText = username || "Unknown User";
-  document.getElementById("navEmail").innerText = localStorage.getItem("email") || "No Email";
-  document.getElementById("navTitle").innerText = localStorage.getItem("title") || "No Title";
-
   function toggleNavbar(){
       document.getElementById("navbar").classList.toggle("active");
       document.getElementById("overlay").classList.toggle("active");
